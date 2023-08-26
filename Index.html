@@ -5,6 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script language="javascript">
+        function mostrarValor(){
+            var valor;
+            var valor2;
+
+            valor=5;
+            valor2="3";
+            valor3="9";
+
+            valor = valor * valor 2;
+            valor= valor2 + valor3;
+
+            var conteudo = document.getElementById("conteudo");
+            conteudo.innerHTML="o resultado é:" + valor;
+            conteudo.style="bacgroundcolor: red; left:300px; top: 200px; position: absolute;"
+        }
+
+        var distanciaEsquerda = 100;
+        var distanciaTopo = 0
+
+        function esquerda(){
+            var conteudo = document.getElementById("conteudo");
+            distanciaEsquerda = distanciaEsquerda - 5;
+            conteudo.style = '"left: ${distanciaEsquerda}px; position: absolute;"'
+        }
+
+        function direita(){
+            var conteudo = document.getElementById("conteudo");
+            distanciaEsquerda = distanciaEsquerda + 5;
+            conteudo.style = '"left: ${distanciaEsquerda}px; position: absolute;"'
+        }
+
+        function acima(){
+            var conteudo = document.getElementById("conteudo");
+            distanciaTopo = distanciaEsquerda - 5;
+            conteudo.style = '"left: ${distanciaTopo}px; position: absolute;"'
+        }
+
+        function abaixo(){
+            var conteudo = document.getElementById("conteudo");
+            distanciaTopo = distanciaEsquerda + 5;
+            conteudo.style = '"left: ${distanciaTopo}px; position: absolute;"'
+        }
+    </script>
 </head>
 
 <body>
@@ -16,12 +60,16 @@
     </nav>
     <div class="conteiner">
         <div class="row">
-            <div class="conteiner col-6">
-                Lorem ipsum dolor sit amet. Et illo sequi in exercitationem repellendus ex minima voluptatem. Ex repellendus nesciunt non deleniti praesentium quo magni molestiae aut cumque dolore et rerum aspernatur. Est ipsa dolorum ut quia amet et dolore veritatis ad praesentium saepe non reiciendis voluptatem aut eveniet voluptatibus qui assumenda facere. Aut necessitatibus iste sed fugiat similique ut commodi omnis est laborum dolor et corporis eius et odit nihil.
+            <div class="conteiner col-6 bg-warning">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
             </div>
 
             <div class="conteiner col-3">
-                Sit placeat ipsum At consequatur dolore ab quia possimus eos eaque numquam et voluptatem ipsa est officiis fugit et voluptatem blanditiis. Sed galisum incidunt et enim consequatur quo voluptatem deserunt et doloremque velit 33 illum reprehenderit sed galisum voluptate eos voluptatem quod. Sed autem officiis ab dicta earum et galisum sunt aut internos deserunt. Sed laboriosam accusamus ab architecto molestiae vel omnis quia?
+                <button type="button" class="btn-primary" onclick="esquerda()">Esquerda</button>
+                <button type="button" class="btn-primary" onclick="direita()">Direita</button>
+                <button type="button" class="btn-primary" onclick="acima()">Acima</button>
+                <button type="button" class="btn-primary" onclick="abaixo()">Abaixo</button>
             </div>
         </div>
     </div>
